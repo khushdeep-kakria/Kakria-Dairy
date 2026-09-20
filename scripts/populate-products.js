@@ -1,0 +1,334 @@
+﻿const fs = require('fs');
+
+const products = [
+  // GHEE
+  {
+    id: "ghee-cow",
+    category: "ghee",
+    name_en: "Pure Cow Ghee",
+    name_pa: "ਸ਼ੁੱਧ ਦੇਸੀ ਗਊ ਦਾ ਘਿਓ",
+    description_en: "Traditional slow-simmered aromatic cow ghee, rich in antioxidants and natural vitamins.",
+    description_pa: "ਹਲਕੀ ਅੱਗ 'ਤੇ ਕਾੜ੍ਹ ਕੇ ਤਿਆਰ ਕੀਤਾ ਸੁਗੰਧਿਤ ਗਊ ਦਾ ਦੇਸੀ ਘਿਓ, ਸਿਹਤ ਅਤੇ ਹਾਜ਼ਮੇ ਲਈ ਸਰਵੋਤਮ।",
+    price_primary: 800,
+    price_half: 400,
+    primary_unit_label_en: "1 kg",
+    primary_unit_label_pa: "1 ਕਿੱਲੋ",
+    half_unit_label_en: "500 g",
+    half_unit_label_pa: "500 ਗ੍ਰਾਮ",
+    unit_type: "kg",
+    has_half: true,
+    nutrition: {
+      fat: "99.8g",
+      carbs: "0g",
+      protein: "0.2g",
+      calories: "898 kcal"
+    },
+    image: "/images/products/ghee-cow.jpg",
+    is_bestseller: true
+  },
+  {
+    id: "ghee-buffalo",
+    category: "ghee",
+    name_en: "Pure Buffalo Ghee",
+    name_pa: "ਸ਼ੁੱਧ ਮੱਝ ਦਾ ਦੇਸੀ ਘਿਓ",
+    description_en: "Rich, granular white-golden buffalo ghee crafted using age-old slow boiling methods.",
+    description_pa: "ਦਾਣੇਦਾਰ, ਸੰਘਣਾ ਅਤੇ ਖ਼ੁਸ਼ਬੂਦਾਰ ਮੱਝ ਦਾ ਦੇਸੀ ਘਿਓ, ਤਾਕਤ ਅਤੇ ਰੋਜ਼ਾਨਾ ਭੋਜਨ ਲਈ ਉੱਤਮ।",
+    price_primary: 680,
+    price_half: 340,
+    primary_unit_label_en: "1 kg",
+    primary_unit_label_pa: "1 ਕਿੱਲੋ",
+    half_unit_label_en: "500 g",
+    half_unit_label_pa: "500 ਗ੍ਰਾਮ",
+    unit_type: "kg",
+    has_half: true,
+    nutrition: {
+      fat: "99.8g",
+      carbs: "0g",
+      protein: "0.1g",
+      calories: "899 kcal"
+    },
+    image: "/images/products/ghee-buffalo.jpg",
+    is_bestseller: true
+  },
+  {
+    id: "ghee-a2-binola",
+    category: "ghee",
+    name_en: "A2 Binola Ghee",
+    name_pa: "A2 ਬਿਲੋਣਾ ਦੇਸੀ ਘਿਓ",
+    description_en: "Hand-churned with traditional wooden bilona from indigenous curd cultures. Supreme purity and therapeutic aroma.",
+    description_pa: "ਮਿੱਟੀ ਦੇ ਭਾਂਡੇ ਅਤੇ ਲੱਕੜ ਦੀ ਮਧਾਣੀ ਨਾਲ ਹੱਥੀਂ ਬਿਲੋ ਕੇ ਤਿਆਰ ਕੀਤਾ ਵਿਸ਼ੇਸ਼ A2 ਬਿਲੋਣਾ ਦੇਸੀ ਘਿਓ।",
+    price_primary: 1200,
+    price_half: 600,
+    primary_unit_label_en: "1 kg",
+    primary_unit_label_pa: "1 ਕਿੱਲੋ",
+    half_unit_label_en: "500 g",
+    half_unit_label_pa: "500 ਗ੍ਰਾਮ",
+    unit_type: "kg",
+    has_half: true,
+    nutrition: {
+      fat: "99.9g",
+      carbs: "0g",
+      protein: "0.1g",
+      calories: "900 kcal"
+    },
+    image: "/images/products/ghee-a2-binola.jpg",
+    is_bestseller: true
+  },
+
+  // PANEER
+  {
+    id: "paneer",
+    category: "paneer",
+    name_en: "Fresh Malai Paneer",
+    name_pa: "ਤਾਜ਼ਾ ਮਲਾਈ ਪਨੀਰ",
+    description_en: "Soft, melt-in-mouth cottage cheese pressed fresh every morning without cornstarch or artificial curdlers.",
+    description_pa: "ਮਲਾਈ ਵਾਂਗ ਨਰਮ, 100% ਸ਼ੁੱਧ ਤਾਜ਼ੇ ਦੁੱਧ ਤੋਂ ਬਣਿਆ ਪਨੀਰ, ਬਿਨਾਂ ਕਿਸੇ ਮੈਦੇ ਜਾਂ ਰਸਾਇਣ ਦੇ।",
+    price_primary: 340,
+    price_half: 170,
+    primary_unit_label_en: "1 kg",
+    primary_unit_label_pa: "1 ਕਿੱਲੋ",
+    half_unit_label_en: "500 g",
+    half_unit_label_pa: "500 ਗ੍ਰਾਮ",
+    unit_type: "kg",
+    has_half: true,
+    nutrition: {
+      fat: "22.5g",
+      carbs: "3.2g",
+      protein: "18.3g",
+      calories: "288 kcal"
+    },
+    image: "/images/products/paneer.jpg",
+    is_bestseller: true
+  },
+
+  // KHOYA
+  {
+    id: "khoya",
+    category: "khoya",
+    name_en: "Pure Desi Khoya (Mawa)",
+    name_pa: "ਸ਼ੁੱਧ ਦੇਸੀ ਖੋਆ (ਮਾਵਾ)",
+    description_en: "Slowly condensed in broad iron kadhais to rich golden perfection. Ideal for homemade sweets and festivals.",
+    description_pa: "ਵੱਡੇ ਲੋਹੇ ਦੇ ਕੜਾਹੇ ਵਿੱਚ ਹੌਲੀ-ਹੌਲੀ ਕਾੜ੍ਹ ਕੇ ਤਿਆਰ ਕੀਤਾ ਸ਼ੁੱਧ ਦਾਣੇਦਾਰ ਖੋਆ, ਮਠਿਆਈਆਂ ਲਈ ਬਿਹਤਰੀਨ।",
+    price_primary: 380,
+    price_half: 190,
+    primary_unit_label_en: "1 kg",
+    primary_unit_label_pa: "1 ਕਿੱਲੋ",
+    half_unit_label_en: "500 g",
+    half_unit_label_pa: "500 ਗ੍ਰਾਮ",
+    unit_type: "kg",
+    has_half: true,
+    nutrition: {
+      fat: "26.0g",
+      carbs: "19.5g",
+      protein: "14.2g",
+      calories: "368 kcal"
+    },
+    image: "/images/products/khoya.jpg",
+    is_bestseller: false
+  },
+
+  // MILK
+  {
+    id: "milk-buffalo",
+    category: "milk",
+    name_en: "Fresh Buffalo Milk",
+    name_pa: "ਤਾਜ਼ਾ ਮੱਝ ਦਾ ਗਾੜ੍ਹਾ ਦੁੱਧ",
+    description_en: "Creamy, full-fat untreated farm milk delivered fresh from morning milking. Perfect for thick curd and kheer.",
+    description_pa: "ਪੂਰੀ ਮਲਾਈ ਵਾਲਾ ਗਾੜ੍ਹਾ ਤਾਜ਼ਾ ਮੱਝ ਦਾ ਦੁੱਧ, ਚਾਹ, ਦਹੀਂ ਅਤੇ ਖੀਰ ਬਣਾਉਣ ਲਈ ਲਾਜਵਾਬ।",
+    price_primary: 65,
+    primary_unit_label_en: "1 Litre",
+    primary_unit_label_pa: "1 ਲੀਟਰ",
+    unit_type: "litre",
+    has_half: false,
+    nutrition: {
+      fat: "6.8g",
+      carbs: "5.2g",
+      protein: "4.1g",
+      calories: "97 kcal"
+    },
+    image: "/images/products/milk-buffalo.jpg",
+    is_bestseller: true
+  },
+  {
+    id: "milk-cow",
+    category: "milk",
+    name_en: "Fresh Cow Milk",
+    name_pa: "ਤਾਜ਼ਾ ਗਊ ਦਾ ਦੁੱਧ",
+    description_en: "Light, easily digestible, nutrient-dense golden cow milk ideal for growing children and elders.",
+    description_pa: "ਹਲਕਾ, ਪਚਣ ਵਿੱਚ ਆਸਾਨ ਅਤੇ ਪੌਸ਼ਟਿਕ ਗਊ ਦਾ ਦੁੱਧ, ਬੱਚਿਆਂ ਅਤੇ ਬਜ਼ੁਰਗਾਂ ਲਈ ਬਹੁਤ ਗੁਣਕਾਰੀ।",
+    price_primary: 50,
+    primary_unit_label_en: "1 Litre",
+    primary_unit_label_pa: "1 ਲੀਟਰ",
+    unit_type: "litre",
+    has_half: false,
+    nutrition: {
+      fat: "3.8g",
+      carbs: "4.8g",
+      protein: "3.4g",
+      calories: "67 kcal"
+    },
+    image: "/images/products/milk-cow.jpg",
+    is_bestseller: false
+  },
+  {
+    id: "milk-skimmed",
+    category: "milk",
+    name_en: "Skimmed Milk",
+    name_pa: "ਸਕਿਮਡ ਦੁੱਧ",
+    description_en: "Low fat, high protein fresh milk for fitness enthusiasts and weight watchers.",
+    description_pa: "ਘੱਟ ਚਰਬੀ ਅਤੇ ਵੱਧ ਪ੍ਰੋਟੀਨ ਵਾਲਾ ਤਾਜ਼ਾ ਦੁੱਧ, ਸਿਹਤ ਅਤੇ ਫਿਟਨੈਸ ਲਈ ਉੱਤਮ ਚੋਣ।",
+    price_primary: 45,
+    primary_unit_label_en: "1 Litre",
+    primary_unit_label_pa: "1 ਲੀਟਰ",
+    unit_type: "litre",
+    has_half: false,
+    nutrition: {
+      fat: "0.5g",
+      carbs: "5.1g",
+      protein: "3.5g",
+      calories: "39 kcal"
+    },
+    image: "/images/products/milk-skimmed.jpg",
+    is_bestseller: false
+  },
+
+  // DAHI (CURD)
+  {
+    id: "dahi",
+    category: "dahi",
+    name_en: "Fresh Desi Dahi (Curd)",
+    name_pa: "ਤਾਜ਼ਾ ਦੇਸੀ ਦਹੀਂ",
+    description_en: "Naturally set thick and velvety curd with authentic gentle sweetness and probiotic goodness.",
+    description_pa: "ਮਿੱਟੀ ਦੇ ਭਾਂਡਿਆਂ ਵਾਂਗ ਕੁਦਰਤੀ ਢੰਗ ਨਾਲ ਜੰਮਿਆ ਗਾੜ੍ਹਾ ਅਤੇ ਮਿੱਠਾ ਦਹੀਂ, ਪੇਟ ਲਈ ਅੰਮ੍ਰਿਤ ਸਮਾਨ।",
+    price_primary: 75,
+    primary_unit_label_en: "1 kg",
+    primary_unit_label_pa: "1 ਕਿੱਲੋ",
+    unit_type: "kg",
+    has_half: false,
+    nutrition: {
+      fat: "4.3g",
+      carbs: "4.5g",
+      protein: "3.5g",
+      calories: "72 kcal"
+    },
+    image: "/images/products/dahi.jpg",
+    is_bestseller: true
+  },
+
+  // SPECIAL LASSI
+  {
+    id: "lassi-chatti",
+    category: "lassi",
+    name_en: "Chatti Wali Lassi",
+    name_pa: "ਚਾਟੀ ਵਾਲੀ ਰਵਾਇਤੀ ਲੱਸੀ",
+    description_en: "Churned in traditional earthenware chatti with cumin and rock salt. Cooling, authentic digestive beverage.",
+    description_pa: "ਮਿੱਟੀ ਦੀ ਚਾਟੀ ਵਿੱਚ ਮਧਾਣੀ ਨਾਲ ਰਿੜਕੀ ਹੋਈ ਨਮਕੀਨ ਲੱਸੀ, ਗਰਮੀਆਂ ਵਿੱਚ ਠੰਡਕ ਅਤੇ ਹਾਜ਼ਮੇ ਲਈ ਲਾਜਵਾਬ।",
+    price_primary: 50,
+    primary_unit_label_en: "1 Litre",
+    primary_unit_label_pa: "1 ਲੀਟਰ",
+    unit_type: "litre",
+    has_half: false,
+    nutrition: {
+      fat: "1.2g",
+      carbs: "4.1g",
+      protein: "2.8g",
+      calories: "38 kcal"
+    },
+    image: "/images/products/lassi-chatti.jpg",
+    is_bestseller: true
+  },
+  {
+    id: "lassi-sweet",
+    category: "lassi",
+    name_en: "Creamy Sweet Lassi",
+    name_pa: "ਮਲਾਈਦਾਰ ਮਿੱਠੀ ਲੱਸੀ",
+    description_en: "Rich, thick Punjabi sweet lassi topped with authentic makhan peda and cardamom essence.",
+    description_pa: "ਗਾੜ੍ਹੀ ਮਲਾਈਦਾਰ ਮਿੱਠੀ ਪੰਜਾਬੀ ਲੱਸੀ, ਉੱਪਰ ਤਾਜ਼ੇ ਮੱਖਣ ਦੇ ਪੇੜੇ ਨਾਲ ਭਰਪੂਰ ਰਵਾਇਤੀ ਸਵਾਦ।",
+    price_primary: 80,
+    primary_unit_label_en: "1 Litre",
+    primary_unit_label_pa: "1 ਲੀਟਰ",
+    unit_type: "litre",
+    has_half: false,
+    nutrition: {
+      fat: "4.5g",
+      carbs: "16.8g",
+      protein: "3.2g",
+      calories: "120 kcal"
+    },
+    image: "/images/products/lassi-sweet.jpg",
+    is_bestseller: true
+  },
+  {
+    id: "lassi-khatti",
+    category: "lassi",
+    name_en: "Traditional Khatti Lassi",
+    name_pa: "ਕੜ੍ਹੀ ਵਾਲੀ ਖੱਟੀ ਲੱਸੀ",
+    description_en: "Tangy cultured buttermilk specially fermented for authentic Punjabi Kadhi and traditional cooking.",
+    description_pa: "ਅਸਲੀ ਪੰਜਾਬੀ ਕੜ੍ਹੀ ਪਕੌੜਾ ਬਣਾਉਣ ਲਈ ਖ਼ਾਸ ਤੌਰ 'ਤੇ ਤਿਆਰ ਕੀਤੀ ਗਈ ਕੁਦਰਤੀ ਖੱਟੀ ਲੱਸੀ।",
+    price_primary: 50,
+    primary_unit_label_en: "1 Litre",
+    primary_unit_label_pa: "1 ਲੀਟਰ",
+    unit_type: "litre",
+    has_half: false,
+    nutrition: {
+      fat: "1.0g",
+      carbs: "3.8g",
+      protein: "2.7g",
+      calories: "35 kcal"
+    },
+    image: "/images/products/lassi-khatti.jpg",
+    is_bestseller: false
+  },
+
+  // HOUSE SPECIAL
+  {
+    id: "chatti-milk",
+    category: "house-special",
+    name_en: "Chatti Milk (House Special)",
+    name_pa: "ਚਾਟੀ ਦਾ ਦੁੱਧ (ਹਾਊਸ ਸਪੈਸ਼ਲ)",
+    description_en: "Our iconic signature! Fresh slow-boiled milk in clay chatti with pure saffron-cardamom aroma. Single serving cup.",
+    description_pa: "ਸਾਡੀ ਦੁਕਾਨ ਦੀ ਮਸ਼ਹੂਰ ਪਛਾਣ! ਮਿੱਟੀ ਦੀ ਚਾਟੀ ਵਿੱਚ ਕਾੜ੍ਹਿਆ ਹੋਇਆ ਕੇਸਰ-ਇਲਾਇਚੀ ਵਾਲਾ ਗਰਮ-ਤਾਜ਼ਾ ਦੁੱਧ।",
+    price_primary: 30,
+    primary_unit_label_en: "180 ml",
+    primary_unit_label_pa: "180 ਮਿ.ਲੀ.",
+    unit_type: "cup",
+    has_half: false,
+    nutrition: {
+      fat: "5.5g",
+      carbs: "6.0g",
+      protein: "3.8g",
+      calories: "88 kcal"
+    },
+    image: "/images/products/chatti-milk.jpg",
+    is_bestseller: true
+  },
+
+  // WHITE BUTTER (MAKHAN)
+  {
+    id: "butter-white",
+    category: "white-butter",
+    name_en: "Fresh Desi White Butter (Makhan)",
+    name_pa: "ਤਾਜ਼ਾ ਦੇਸੀ ਚਿੱਟਾ ਮੱਖਣ",
+    description_en: "Hand-churned unsalted white butter scooped straight from the earthen chatti. Pure Punjabi soul food for paranthas.",
+    description_pa: "ਚਾਟੀ ਵਿੱਚੋਂ ਤਾਜ਼ਾ ਕੱਢਿਆ ਹੋਇਆ ਬਿਨਾਂ ਲੂਣ ਦਾ ਚਿੱਟਾ ਦੇਸੀ ਮੱਖਣ, ਗਰਮਾ-ਗਰਮ ਪਰੌਂਠਿਆਂ ਦੀ ਸ਼ਾਨ।",
+    price_primary: 700,
+    price_half: 350,
+    primary_unit_label_en: "1 kg",
+    primary_unit_label_pa: "1 ਕਿੱਲੋ",
+    half_unit_label_en: "500 g",
+    half_unit_label_pa: "500 ਗ੍ਰਾਮ",
+    unit_type: "kg",
+    has_half: true,
+    nutrition: {
+      fat: "81.5g",
+      carbs: "0.6g",
+      protein: "0.9g",
+      calories: "737 kcal"
+    },
+    image: "/images/products/butter-white.jpg",
+    is_bestseller: true
+  }
+];
+
+fs.writeFileSync('data/products.json', JSON.stringify(products, null, 2), 'utf8');
+console.log(`Successfully populated data/products.json with ${products.length} products`);

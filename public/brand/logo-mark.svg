@@ -1,0 +1,62 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="markGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F9D776" />
+      <stop offset="50%" stop-color="#D99B26" />
+      <stop offset="100%" stop-color="#B87F17" />
+    </linearGradient>
+    <linearGradient id="markGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A7B4C" />
+      <stop offset="100%" stop-color="#123E23" />
+    </linearGradient>
+    <linearGradient id="milkWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#FFF8E7" />
+    </linearGradient>
+    <filter id="markShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0E341E" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Circle -->
+  <circle cx="100" cy="100" r="92" fill="url(#markGreen)" stroke="url(#markGold)" stroke-width="4" filter="url(#markShadow)" />
+  <circle cx="100" cy="100" r="84" fill="none" stroke="#F4BD4A" stroke-width="1" stroke-dasharray="3,4" opacity="0.8" />
+
+  <!-- Inner Warm Cream Glow -->
+  <circle cx="100" cy="100" r="76" fill="#FAF6EE" />
+
+  <!-- Flanking Golden Wheat / Leaf Sprigs -->
+  <!-- Left Sprig -->
+  <g fill="#D99B26" opacity="0.95">
+    <path d="M 50,135 C 44,115 50,85 64,68 C 60,84 62,108 68,126 Z" fill="#236D42"/>
+    <ellipse cx="48" cy="90" rx="4" ry="7" transform="rotate(-30 48 90)"/>
+    <ellipse cx="44" cy="105" rx="4" ry="7" transform="rotate(-35 44 105)"/>
+    <ellipse cx="44" cy="120" rx="3.8" ry="6.5" transform="rotate(-40 44 120)"/>
+    <ellipse cx="48" cy="135" rx="3.5" ry="6" transform="rotate(-45 48 135)"/>
+  </g>
+
+  <!-- Right Sprig -->
+  <g fill="#D99B26" opacity="0.95">
+    <path d="M 150,135 C 156,115 150,85 136,68 C 140,84 138,108 132,126 Z" fill="#236D42"/>
+    <ellipse cx="152" cy="90" rx="4" ry="7" transform="rotate(30 152 90)"/>
+    <ellipse cx="156" cy="105" rx="4" ry="7" transform="rotate(35 156 105)"/>
+    <ellipse cx="156" cy="120" rx="3.8" ry="6.5" transform="rotate(40 156 120)"/>
+    <ellipse cx="152" cy="135" rx="3.5" ry="6" transform="rotate(45 152 135)"/>
+  </g>
+
+  <!-- Central Milk Drop Silhouette -->
+  <path d="M 100,50 C 90,75 72,98 72,118 C 72,134 84,146 100,146 C 116,146 128,134 128,118 C 128,98 110,75 100,50 Z" 
+        fill="url(#markGreen)" stroke="url(#markGold)" stroke-width="2.5" />
+
+  <!-- Inner Pure Milk Cream Drop with Shimmer -->
+  <path d="M 100,64 C 93,84 80,103 80,118 C 80,130 89,139 100,139 C 111,139 120,130 120,118 C 120,103 107,84 100,64 Z" 
+        fill="url(#milkWhite)" />
+
+  <!-- Drop Gloss Highlight -->
+  <ellipse cx="94" cy="112" rx="4" ry="10" transform="rotate(-18 94 112)" fill="#FFFFFF" opacity="0.85" />
+  <circle cx="97" cy="98" r="2.5" fill="#FFFFFF" opacity="0.75" />
+
+  <!-- Tiny Golden Sprout at bottom of drop -->
+  <path d="M 100,126 Q 104,118 108,122 Q 104,124 100,126 Z" fill="#D99B26" />
+  <path d="M 100,126 Q 96,118 92,122 Q 96,124 100,126 Z" fill="#D99B26" />
+</svg>

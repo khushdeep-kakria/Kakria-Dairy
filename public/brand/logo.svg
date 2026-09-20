@@ -1,0 +1,97 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F9D776" />
+      <stop offset="50%" stop-color="#D99B26" />
+      <stop offset="100%" stop-color="#B87F17" />
+    </linearGradient>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#236D42" />
+      <stop offset="100%" stop-color="#123E23" />
+    </linearGradient>
+    <linearGradient id="milkWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#FFFDF7" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0E341E" flood-opacity="0.25"/>
+    </filter>
+    <path id="topCurve" d="M 60,195 A 140,140 0 0,1 340,195" fill="none"/>
+    <path id="bottomCurve" d="M 330,215 A 130,130 0 0,1 70,215" fill="none"/>
+  </defs>
+
+  <!-- Outer Ring with Shadow -->
+  <circle cx="200" cy="200" r="190" fill="url(#greenGradient)" stroke="url(#goldGradient)" stroke-width="6" filter="url(#shadow)" />
+  
+  <!-- Dotted Accent Ring -->
+  <circle cx="200" cy="200" r="176" fill="none" stroke="#F4BD4A" stroke-width="2" stroke-dasharray="3,6" />
+  
+  <!-- Inner Cream Circle -->
+  <circle cx="200" cy="200" r="162" fill="#FAF6EE" stroke="#184E2E" stroke-width="4" />
+  
+  <!-- Subtle Dairy Glow -->
+  <circle cx="200" cy="200" r="115" fill="#F0E7D5" opacity="0.6" />
+
+  <!-- Arched Top Text: KAKRIA DAIRY -->
+  <text font-family="'Cinzel', Georgia, serif" font-size="28" font-weight="900" fill="#184E2E" letter-spacing="4.5">
+    <textPath href="#topCurve" startOffset="50%" text-anchor="middle">
+      KAKRIA DAIRY
+    </textPath>
+  </text>
+
+  <!-- Decorative Stars on side -->
+  <g fill="url(#goldGradient)">
+    <polygon points="52,196 56,186 66,186 58,192 61,202 52,196 43,202 46,192 38,186 48,186" transform="scale(0.8) translate(10, 45)" />
+    <polygon points="52,196 56,186 66,186 58,192 61,202 52,196 43,202 46,192 38,186 48,186" transform="scale(0.8) translate(400, 45)" />
+  </g>
+
+  <!-- Central Dairy Emblem: Milk-Drop + Wheat/Leaf Motif -->
+  <g transform="translate(0, 0)">
+    <!-- Flanking Foliage / Wheat Ears -->
+    <!-- Left Wheat Sprig -->
+    <path d="M 132,232 C 122,198 130,162 148,140 C 142,160 144,188 150,218 Z" fill="#236D42" opacity="0.9"/>
+    <ellipse cx="132" cy="162" rx="4.5" ry="8" transform="rotate(-30 132 162)" fill="#D99B26" />
+    <ellipse cx="127" cy="182" rx="4.5" ry="8" transform="rotate(-35 127 182)" fill="#D99B26" />
+    <ellipse cx="128" cy="202" rx="4.5" ry="8" transform="rotate(-40 128 202)" fill="#D99B26" />
+    <ellipse cx="134" cy="222" rx="4" ry="7" transform="rotate(-45 134 222)" fill="#D99B26" />
+
+    <!-- Right Wheat Sprig -->
+    <path d="M 268,232 C 278,198 270,162 252,140 C 258,160 256,188 250,218 Z" fill="#236D42" opacity="0.9"/>
+    <ellipse cx="268" cy="162" rx="4.5" ry="8" transform="rotate(30 268 162)" fill="#D99B26" />
+    <ellipse cx="273" cy="182" rx="4.5" ry="8" transform="rotate(35 273 182)" fill="#D99B26" />
+    <ellipse cx="272" cy="202" rx="4.5" ry="8" transform="rotate(40 272 202)" fill="#D99B26" />
+    <ellipse cx="266" cy="222" rx="4" ry="7" transform="rotate(45 266 222)" fill="#D99B26" />
+
+    <!-- Central Milk Drop Base Outer -->
+    <path d="M 200,132 C 182,165 158,195 158,220 C 158,244 176,258 200,258 C 224,258 242,244 242,220 C 242,195 218,165 200,132 Z" 
+          fill="url(#greenGradient)" stroke="url(#goldGradient)" stroke-width="3" />
+
+    <!-- Central Pure Milk Fill -->
+    <path d="M 200,146 C 187,175 168,202 168,220 C 168,238 182,250 200,250 C 218,250 232,238 232,220 C 232,202 213,175 200,146 Z" 
+          fill="url(#milkWhite)" />
+
+    <!-- Pure Cream Reflection / Highlight -->
+    <ellipse cx="188" cy="214" rx="5" ry="14" transform="rotate(-18 188 214)" fill="#FFFFFF" opacity="0.9" />
+    <circle cx="192" cy="192" r="3.5" fill="#FFFFFF" opacity="0.8" />
+
+    <!-- Center Golden Butterdrop Accent -->
+    <circle cx="200" cy="225" r="7" fill="url(#goldGradient)" />
+  </g>
+
+  <!-- Banner Ribbon for "SINCE 2002 • BY DKK" -->
+  <g transform="translate(0, 0)">
+    <path d="M 105,278 L 295,278 L 285,306 L 115,306 Z" fill="#6B1D27" stroke="url(#goldGradient)" stroke-width="2" />
+    <path d="M 85,286 L 105,278 L 105,306 L 90,314 Z" fill="#481018" />
+    <path d="M 315,286 L 295,278 L 295,306 L 310,314 Z" fill="#481018" />
+    <text x="200" y="298" font-family="'Cinzel', Georgia, serif" font-size="14.5" font-weight="bold" fill="#FAF6EE" text-anchor="middle" letter-spacing="2">
+      SINCE 2002 • BY DKK
+    </text>
+  </g>
+
+  <!-- Arched Bottom Gurmukhi / Town Text -->
+  <text font-family="'Noto Sans Gurmukhi', system-ui, sans-serif" font-size="14" font-weight="bold" fill="#184E2E" letter-spacing="2">
+    <textPath href="#bottomCurve" startOffset="50%" text-anchor="middle">
+      ਕੋਟਕਪੂਰਾ • 100% ਸ਼ੁੱਧ ਦੇਸੀ
+    </textPath>
+  </text>
+</svg>
