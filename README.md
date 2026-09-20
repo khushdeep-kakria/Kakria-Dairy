@@ -1,66 +1,123 @@
-# Kakria Dairy (?????? ?????) � Since 2002 by DKK
+# 🥛 Kakria Dairy
 
-Pure, authentic, and homemade dairy storefront and order management platform based in Kotakpura, Punjab.
+### Pure • Authentic • Homemade Dairy Products
 
-## Features
-- **Pure Storefront**: Handcrafted Cow Ghee, Buffalo Ghee, A2 Binola Ghee, Fresh Paneer, Pure Khoya, Makhan, and Chatti Milk.
-- **Bilingual**: English and Punjabi (??????) with full dictionary translations and Gurmukhi typography.
-- **Dark & Light Mode**: System-preference detected, localStorage preserved, zero-FOUC theme switching.
-- **Dynamic UPI Checkout**: Real-time UPI QR generation per order, mobile deep-link (`upi://pay`), WhatsApp confirmation, and 12-digit UTR verification.
-- **Storefront Admin Integration**: Discrete admin login directly overlaying controls (In-stock toggle, soft-discontinue, price edit, Cloudinary photo change, and live order drawer) onto the storefront.
-- **Customer Reviews**: Rating submission with anti-spam honeypot, rate limiting (3/hr/IP), client-side photo compression, and admin moderation (Approve / Hide / Delete).
-- **Production Performance**: Server-side caching, compound MongoDB indexes, Cloudinary image transformations, lean queries, gzip compression, and security headers.
+Kakria Dairy is a bilingual dairy storefront and order management platform built for a family-owned dairy business based in Kotakpura, Punjab.
+
+The platform allows customers to explore dairy products, place orders, make UPI payments, and submit reviews, while administrators can manage products, orders, inventory, and customer reviews.
 
 ---
 
-## Quick Setup
+## ✨ Features
 
-### 1. Prerequisites
-- Node.js 18+ (Node 20 Recommended)
-- MongoDB Database (Atlas or local)
+### 🛍️ Customer Storefront
 
-### 2. Install Dependencies
-```bash
-npm install
-```
+- Browse dairy products
+- View product prices and availability
+- Responsive design for desktop and mobile
+- Available products include:
+  - Cow Ghee
+  - Buffalo Ghee
+  - A2 Binola Ghee
+  - Fresh Paneer
+  - Pure Khoya
+  - Makhan
+  - Chatti Milk
 
-### 3. Environment Configuration
-Copy `.env.example` to `.env` and fill in your credentials:
-```bash
-cp .env.example .env
-```
+### 🌐 Bilingual Interface
 
-Key environment variables:
-- `MONGODB_URI`: MongoDB connection string
-- `JWT_SECRET`: Secret key for admin session authentication
-- `ADMIN_USERNAME`: Admin login username
-- `ADMIN_PASSWORD`: Admin login password
-- `UPI_ID`: Shop UPI VPA for receiving payments
-- `PAYEE_NAME`: Registered payee name
-- `UNCLE_WHATSAPP`: Shop contact number (+91 98153 42224)
-- `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`: Cloudinary credentials (optional)
+- English and Punjabi language support
+- Punjabi translations using Gurmukhi typography
+- Dictionary-based translations
 
-### 4. Build and Run
+### 🌓 Dark & Light Mode
 
-#### Development Server
-```bash
-npm run dev
-```
+- Automatic system theme detection
+- Manual theme switching
+- Theme preference saved using `localStorage`
+- Zero-FOUC theme switching
 
-#### Production Server (Port 3000)
-```bash
-npm run build
-npm start
-```
+### 💳 UPI Payment System
 
-### 5. Health Check
-Check application and database health:
-```bash
-curl http://localhost:3000/api/health
-```
+- Dynamic UPI QR generation for each order
+- UPI mobile deep-link support
+- Order-based payment flow
+- UTR submission and verification
+- WhatsApp order confirmation
 
-### 6. Docker Deployment
-```bash
-docker build -t kakria-dairy .
-docker run -p 3000:3000 --env-file .env kakria-dairy
-```
+### 🔐 Admin Management
+
+Administrators can:
+
+- Securely log in
+- Update product prices
+- Toggle product availability
+- Soft-discontinue products
+- Change product images
+- View incoming orders
+- Manage orders through a live order drawer
+
+### ⭐ Customer Reviews
+
+- Customer rating submission
+- Optional photo uploads
+- Client-side image compression
+- Honeypot anti-spam protection
+- Rate limiting
+- Admin moderation
+- Approve, hide, or delete reviews
+
+### ⚡ Performance & Security
+
+- Server-side caching
+- Optimized MongoDB queries
+- Compound MongoDB indexes
+- Cloudinary image transformations
+- Gzip compression
+- Security headers
+- Lean database queries
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| Next.js | Full-stack web application |
+| TypeScript | Application development |
+| Tailwind CSS | UI styling |
+| MongoDB | Database |
+| Cloudinary | Image storage and transformations |
+| JWT | Admin authentication |
+| UPI | Online payments |
+| WhatsApp | Order confirmation |
+| Docker | Containerization |
+
+---
+
+## 📁 Project Structure
+
+```text
+Kakria-Dairy/
+│
+├── app/                  # Next.js application routes and pages
+├── components/           # Reusable UI components
+├── context/              # React context and application state
+├── data/                 # Static data and dictionaries
+├── lib/                  # Utility functions and services
+├── models/               # MongoDB models
+├── public/               # Static assets
+├── scripts/              # Utility and setup scripts
+├── types/                # TypeScript type definitions
+│
+├── .dockerignore
+├── .env.example
+├── .gitignore
+├── Dockerfile
+├── next.config.mjs
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── tailwind.config.ts
+├── tsconfig.json
+└── README.md
